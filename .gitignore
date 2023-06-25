@@ -18,3 +18,5 @@ camera_settings.log
 *.weights
 
 README2.md
+
+.DS_Store
