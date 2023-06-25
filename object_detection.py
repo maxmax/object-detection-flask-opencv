@@ -78,7 +78,7 @@ class VideoStreaming(object):
 
         self._preview = True
         self._flipH = False
-        self._detect = False
+        self._detect = True
         self._exposure = self.VIDEO.get(cv2.CAP_PROP_EXPOSURE)
         self._contrast = self.VIDEO.get(cv2.CAP_PROP_CONTRAST)
 
