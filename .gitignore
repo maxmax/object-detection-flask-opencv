@@ -17,6 +17,8 @@ camera_settings.log
 
 *.weights
 
+models/yolov3.pt
+
 README2.md
 
 .DS_Store
