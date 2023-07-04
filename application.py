@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, Response, redirect, url_for
+from flask import Flask, render_template, request, Response, redirect, url_for, jsonify
 from flask_bootstrap import Bootstrap
 
 from object_detection import *
@@ -86,6 +86,18 @@ def reset_camera():
     print("*"*10, STATUS)
     return "nothing"
 
+
+@application.route('/api', methods=['GET'])
+def api():
+    data = [
+        {
+            "id": 0
+        },
+        {
+            "id": 1
+        }
+    ]
+    return jsonify(data)
 
 if __name__ == "__main__":
     application.run(debug=True)
