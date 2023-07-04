@@ -1,13 +1,12 @@
-import './App.css';
+import { Provider } from 'mobx-react';
+import { stores } from './stores/root-store';
+import DetectionView from './containers/DetectionView';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Object detection</h1>
-      <section className="container-video">
-        <img id="videoElement" src="http://127.0.0.1:5000/video_feed" />
-      </section>
-    </div>
+    <Provider { ...stores }>
+      <DetectionView />
+    </Provider>
   );
 }
 
