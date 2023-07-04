@@ -3,7 +3,7 @@ import { API_SOURCE, API_DETECTION } from '@env'
 
 class DetectionStore {
   data = [];
-  source = '/';
+  source = API_SOURCE;
   state = "stop";
   sourceForm = false;
 
@@ -22,8 +22,6 @@ class DetectionStore {
   }
 
   getVideo() {
-    this.state = "pending";
-    this.source = API_SOURCE;
     this.state = "done";
   }
 
