@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, Response, redirect, url_for, jsonify
 from flask_bootstrap import Bootstrap
 
-from object_detection import *
-from camera_settings import *
+from utils.video_detection import *
+from utils.camera_settings import *
 
 
 application = Flask(__name__)
@@ -85,19 +85,6 @@ def reset_camera():
     STATUS = reset_settings()
     print("*"*10, STATUS)
     return "nothing"
-
-
-@application.route('/api', methods=['GET'])
-def api():
-    data = [
-        {
-            "id": 0
-        },
-        {
-            "id": 1
-        }
-    ]
-    return jsonify(data)
 
 if __name__ == "__main__":
     application.run(debug=True)

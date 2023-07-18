@@ -1,7 +1,14 @@
 Flask==2.3.2
 Flask-Bootstrap==3.3.7.1
+flask_cors
 numpy==1.23.0
 opencv-python==4.6.0.66
 requests==2.31.0
 imageai
 matplotlib
+tensorflow
+Werkzeug
+MarkupSafe
+Jinja2
+itsdangerous
+click
