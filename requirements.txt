@@ -7,8 +7,6 @@ requests==2.31.0
 imageai
 matplotlib
 tensorflow
-Werkzeug
-MarkupSafe
-Jinja2
-itsdangerous
-click
+tensorflow-datasets
+pillow
+flask-cors

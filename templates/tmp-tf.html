@@ -1,0 +1,33 @@
+ <!--
+Copyright (c) 2018 ml5
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+-->
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="static/tf/style.css">
+  <script src="static/tf/jquery.min.js"></script>
+</head>
+
+<body onresize="windowResized()">
+  <div id="container">
+
+    <img src="images/demo.jpg" id="image" class="center">
+    <div id="text-container">
+      <p id="instruction" class="green-color">
+      <button id="uploader-btn" onClick="clickUploader()">Upload image</button>
+
+      <p id="warning" class="result-color"></p>
+      <p class="result-color">
+        The result is:
+      </p>
+      <input name="imgFile" type="file" id="fileUploader" accept="image/*" onChange="handleFiles()">
+    </div>
+    <canvas id="canvas"></canvas>
+  </div>
+  <script src="static/tf/index.js"></script>
+</body>
+</html>
