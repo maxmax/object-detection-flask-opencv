@@ -8,5 +8,6 @@ imageai
 matplotlib
 tensorflow
 tensorflow-datasets
+tensorflow_hub
 pillow
 flask-cors

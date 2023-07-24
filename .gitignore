@@ -4,6 +4,8 @@ __pycache__/
 *$py.class
 .env
 
+app-tf2.py
+
 ### Jupyter Notebook ###
 .ipynb_checkpoints
 

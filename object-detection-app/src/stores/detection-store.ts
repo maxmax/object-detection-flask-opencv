@@ -43,7 +43,7 @@ class DetectionStore {
 
   getData() {
     // const url = `${API_DETECTION}/api`;
-    const url = `/api`;
+    // const url = `/apidev`;
     this.data = [];
     this.state = "pending";
     fetch(url)
