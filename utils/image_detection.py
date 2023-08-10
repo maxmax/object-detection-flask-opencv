@@ -128,6 +128,11 @@ class ObjectDetection(object):
 
         self.outputImage = os.path.join(self.OUTPUT_PATCH , filename + "_yolo3." + ext)
         self.outputimg = cv2.imread(self.outputImage)
-        self.outputImgData = cv2.imencode('.jpg', self.outputimg)[1].tobytes()
+        self.converted = cv2.imencode('.jpg', self.outputimg)[1].tobytes()
+        #self.outputImgShape = self.outputimg.shape
+        #self.converted = cv2.imencode('.jpg', self.outputimg)[1].tostring()
+        #self.convertedString = base64.b64encode(cv2.imencode('.jpg', self.converted)[1]).decode()
+        # self.imdeCode = cv2.imdecode(self.outputimg,0)
+        #self.outputImgData = cv2.imshow('image',self.outputImage)
 
         return self.outputImage

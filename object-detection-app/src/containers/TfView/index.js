@@ -64,12 +64,22 @@ function TfView(props) {
     data,
     getData,
     sendImage,
+    resetImage,
   } = props.tfStore;
+
+  const decodeImage = () => {
+    sendImage(selectedImage)
+  }
+
+  const removeImage = () => {
+    // setSelectedImage(null)
+    // resetImage()
+  }
 
   return (
     <Container maxWidth="sm">
       <Box sx={{ mt: 10 }}>
-        {selectedImage && (
+        {!!selectedImage && (
           <div>
             <img
               alt="not found"
@@ -79,8 +89,8 @@ function TfView(props) {
             <br />
             <br />
             <ButtonGroup variant="contained" aria-label="outlined primary button group">
-              <Button color="error" onClick={() => setSelectedImage(null)}>Remove</Button>
-              <Button variant="contained" onClick={() => sendImage(selectedImage)}>Decode Image</Button>
+              <Button color="error" onClick={() => removeImage(null)}>Remove</Button>
+              <Button variant="contained" onClick={() => decodeImage()}>Decode Image</Button>
             </ButtonGroup>
             <br />
           </div>
@@ -104,7 +114,7 @@ function TfView(props) {
         {state === 'pending' && (
           <CircularProgress />
         )}
-        {selectedImage && state === 'done' && (
+        {!!selectedImage && state === 'done' && (
           <>
             <br />
             <br />

@@ -16,8 +16,9 @@ function DetectionView(props) {
     state,
     source,
     sourceForm,
-    getData,
+    getVideoUrl,
     getVideo,
+    resetCamera,
     stopVideo,
     swithSourceForm,
     sendSource,
@@ -42,7 +43,7 @@ function DetectionView(props) {
         )}
         {state === 'stop' && (
           <>
-            <Button variant="contained" onClick={() => getVideo()}>Start</Button>
+            <Button variant="contained" onClick={() => getVideoUrl()}>Start</Button>
             <br />
             <br />
             <Button variant="contained" color="success" onClick={() => swithSourceForm()}>Change source</Button>
@@ -65,7 +66,7 @@ function DetectionView(props) {
               src={source}
             />
             <br />
-            <Button variant="contained" onClick={() => stopVideo()}>Stop</Button>
+            <Button variant="contained" onClick={() => resetCamera()}>Stop</Button>
           </>
         )}
       </Box>

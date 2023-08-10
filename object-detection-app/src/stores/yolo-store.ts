@@ -1,19 +1,32 @@
 import { observable, makeAutoObservable, makeObservable, action } from 'mobx';
 // import { API_SOURCE, API_DETECTION } from '@env'
 
-class TfStore {
+class YoloStore {
   data = [];
   // source = API_SOURCE;
   state = "stop";
+  selectedImage = null;
+  selectedImageUrl = '';
+  sourceImageUrl = null;
 
   constructor() {
     makeObservable(this, {
       // source: observable,
       data: observable,
       state: observable,
+      selectedImage: observable,
+      selectedImageUrl: observable,
+      sourceImageUrl: observable,
       getData: action.bound,
       sendImage: action.bound,
     })
+  }
+
+  setSelectedImage = (img) => {
+    if (img) {
+      this.selectedImage = img;
+      this.selectedImageUrl = URL.createObjectURL(img);
+    }
   }
 
   getData(source) {
@@ -32,13 +45,11 @@ class TfStore {
 
   sendImage(image) {
     // const url = `${API_SOURCE}/apidev`;
-    const url = `http://192.168.1.100:5000/api-tf-image/`;
+    const url = `http://192.168.1.100:5000/api-yolo-image`;
     this.data = [];
     this.state = "pending";
-    console.log('sendImage_____image__S', image);
     let data = new FormData();
     data.append('file', image);
-    // data.append('filename', this.fileName.value);
 
     const options = {
       method: 'POST',
@@ -50,6 +61,9 @@ class TfStore {
       .then(result => {
         this.data = result.data;
         this.state = "done";
+        let image = new Image();
+        image.src = `data:image/jpg;base64,${result.image}`;
+        this.sourceImageUrl = image.src;
       })
       .catch((error) => {
         this.state = "error";
@@ -58,7 +72,7 @@ class TfStore {
   }
 }
 
-const tfStore = new TfStore();
+const yoloStore = new YoloStore();
 
-export default tfStore;
-export { TfStore };
+export default yoloStore;
+export { YoloStore };

@@ -5,6 +5,9 @@ __pycache__/
 .env
 
 app-tf2.py
+app-tf.py
+app-image.py
+app-video.py
 
 ### Jupyter Notebook ###
 .ipynb_checkpoints

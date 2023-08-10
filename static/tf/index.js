@@ -15,7 +15,7 @@ function GetUrlPara()
 	// var host =  window.location.host.toString();
 	var host =  document.domain.toString();
         var port = window.location.port.toString();
-	var url = protocol + '//' + host + ":5000/api/";
+	var url = protocol + '//' + host + ":5000/tf-image/";
 	return url;
 　　}
 

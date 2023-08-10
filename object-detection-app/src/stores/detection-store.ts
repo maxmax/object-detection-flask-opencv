@@ -15,7 +15,8 @@ class DetectionStore {
       source: observable,
       sourceForm: observable,
       getVideo: action.bound,
-      getData: action.bound,
+      getVideoUrl: action.bound,
+      resetCamera: action.bound,
       stopVideo: action.bound,
       swithSourceForm: action.bound,
       sendSource: action.bound,
@@ -41,17 +42,35 @@ class DetectionStore {
     this.state = "done";
   }
 
-  getData() {
+  getVideoUrl() {
     // const url = `${API_DETECTION}/api`;
-    // const url = `/apidev`;
+    const url = `http://192.168.1.100:5000/api-video-feed`;
     this.data = [];
     this.state = "pending";
     fetch(url)
       .then(response => response.json())
       .then(result => {
+        // console.log();
+        this.source = result.source;
         this.data = result;
         this.state = "done";
     })
+  }
+
+  resetCamera() {
+    // const url = `${API_DETECTION}/api`;
+    const url = `http://192.168.1.100:5000/api-reset-camera`;
+    // this.data = [];
+    this.state = "pending";
+    // this.state = "stop";
+    console.log('result__resetCamera___');
+    fetch(url)
+      .then(response => response.json())
+      .then(result => {
+        console.log('result__resetCamera_2__', result);
+        this.source = "";
+        this.state = "stop";
+     })
   }
 }
 
