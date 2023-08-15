@@ -9,7 +9,6 @@ import io
 import os
 
 from utils.tf_inference import load_model, inference
-######
 from utils.image_detection import ObjectDetection
 from utils.video_detection import VideoStreaming
 from utils.camera_settings import check_settings, reset_settings
@@ -20,17 +19,11 @@ sess, detection_graph = load_model()
 
 app = Flask(__name__)
 CORS(app)
-#app.config['CORS_HEADERS'] = 'Content-Type'
 
-#upload_folder = os.path.join('images')
-#application.config['UPLOAD'] = upload_folder
 upload_folder = os.path.join('images')
 root_folder = os.path.join('')
 app.config['UPLOAD'] = upload_folder
 app.config['ROOT'] = root_folder
-
-#check_settings()
-#VIDEO = VideoStreaming()
 
 @app.route("/")
 def home():
@@ -131,13 +124,9 @@ def api_video_feed():
 
 @app.route("/api-reset-camera")
 def api_reset_camera():
-    #check_settings()
     STATUS = reset_settings()
-    #VIDEO.preview = not VIDEO.preview
     print('STATUS____', STATUS)
     print("*"*10, STATUS)
-    # return "nothing"
-    # Response.close()
     return jsonify({
         'success': True,
         'file': 'Received'
