@@ -13,7 +13,6 @@ import {
 
 
 function YoloView(props) {
-  // const [selectedImage, setSelectedImage] = useState(null);
 
   const {
     state,
@@ -35,21 +34,6 @@ function YoloView(props) {
     // setSelectedImage(null)
     // resetImage()
   }
-
-  // const sendSelectedImage = () => {
-    // setSelectedImage(null)
-    // resetImage()
-  // }
-
-  //console.log('props_____yoloStore__', props.yoloStore)
-  // console.log('selectedImage_____WWWWW__', selectedImage)
-  //if (selectedImage) {
-  //  console.log('selectedImage_____WWWWW_2_', selectedImage)
-  //  console.log('selectedImage_____WWWWW_3_', selectedImageUrl)
-  //}
-
-  // sourceImageUrl
-  // console.log('selectedImage____sourceImageUrl_', sourceImageUrl)
 
   return (
     <Container maxWidth="sm">

@@ -7,14 +7,11 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
-// import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-// import AdbIcon from '@mui/icons-material/Adb';
 import MenuIcon from '@mui/icons-material/Menu';
 
-// const pages = ['tf', 'yolo', 'detection'];
 const pages = [
   {name: 'tf', url: 'tf'},
   {name: 'yolo', url: 'yolo'},
@@ -27,14 +24,10 @@ export default function Navigation() {
   const navigate = useNavigate();
 
   const [anchorElNav, setAnchorElNav] = React.useState(null | HTMLElement>(null));
-  // const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-  //const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    // setAnchorElUser(event.currentTarget);
-  //};
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
@@ -45,33 +38,16 @@ export default function Navigation() {
     navigate(url, { replace: true });
   };
 
-  //const handleCloseUserMenu = () => {
-    // setAnchorElUser(null);
-  //};
-
-  // this.props.history.push('/foo')
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            {/*<IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>*/}
             <Typography
               variant="h6"
               component="div"
-              // sx={{ flexGrow: 1 }}
               sx={{
                 mr: 2,
-                // display: { xs: 'none', md: 'flex' },
                 fontFamily: 'monospace',
                 fontWeight: 700,
                 lineHeight: 1,
@@ -117,7 +93,6 @@ export default function Navigation() {
                   horizontal: 'left',
                 }}
                 open={Boolean(anchorElNav)}
-                // open={'true'}
                 onClose={handleCloseNavMenu}
                 sx={{
                   display: { xs: 'block', md: 'none' },
@@ -130,7 +105,6 @@ export default function Navigation() {
                 ))}
               </Menu>
             </Box>
-            {/*<Button color="inherit">Login</Button>*/}
           </Toolbar>
         </Container>
       </AppBar>
