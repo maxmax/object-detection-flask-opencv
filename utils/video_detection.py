@@ -3,7 +3,6 @@ import time
 import cv2
 import numpy as np
 
-
 class ObjectDetection:
     def __init__(self):
         PROJECT_PATH = os.path.abspath(os.getcwd())
