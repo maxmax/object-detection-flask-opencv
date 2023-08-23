@@ -9,6 +9,7 @@ import {
 import DetectionView from './containers/DetectionView';
 import TfView from './containers/TfView';
 import YoloView from './containers/YoloView';
+import TfFront from './containers/TfFront';
 import Navigation from './components/Navigation';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/detection" element={<DetectionView />} />
         <Route path="/tf" element={<TfView />} />
         <Route path="/yolo" element={<YoloView />} />
+        <Route path="/tf-front" element={<TfFront />} />
       </Routes>
     </Provider>
   );

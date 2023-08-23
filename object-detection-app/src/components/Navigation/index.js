@@ -14,6 +14,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 const pages = [
   {name: 'tf', url: 'tf'},
+  {name: 'tf front', url: 'tf-front'},
   {name: 'yolo', url: 'yolo'},
   {name: 'detection', url: 'detection'}
 ];
