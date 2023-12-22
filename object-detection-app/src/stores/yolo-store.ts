@@ -1,5 +1,6 @@
 import { observable, makeAutoObservable, makeObservable, action } from 'mobx';
-// import { API_SOURCE, API_DETECTION } from '@env'
+
+const API_SOURCE = process.env.REACT_APP_API_SOURCE;
 
 class YoloStore {
   data = [];
@@ -30,8 +31,7 @@ class YoloStore {
   }
 
   getData(source) {
-    // const url = `${API_SOURCE}/apidev`;
-    const url = source;
+    const url = `${API_SOURCE}/apidev`;
     this.data = [];
     this.state = "pending";
     fetch(url)
@@ -41,11 +41,11 @@ class YoloStore {
         this.state = "done";
     })
   }
+
   resetImage() {}
 
   sendImage(image) {
-    // const url = `${API_SOURCE}/apidev`;
-    const url = `http://192.168.1.100:5000/api-yolo-image`;
+    const url = `${API_SOURCE}/api-yolo-image`;
     this.data = [];
     this.state = "pending";
     let data = new FormData();

@@ -1,5 +1,6 @@
 import { observable, makeAutoObservable, makeObservable, action } from 'mobx';
-// import { API_SOURCE, API_DETECTION } from '@env'
+
+const API_SOURCE = process.env.REACT_APP_API_SOURCE;
 
 class TfStore {
   data = [];
@@ -31,11 +32,9 @@ class TfStore {
   resetImage() {}
 
   sendImage(image) {
-    // const url = `${API_SOURCE}/apidev`;
-    const url = `http://192.168.1.100:5000/api-tf-image/`;
+    const url = `${API_SOURCE}/api-tf-image/`;
     this.data = [];
     this.state = "pending";
-    console.log('sendImage_____image__S', image);
     let data = new FormData();
     data.append('file', image);
     // data.append('filename', this.fileName.value);

@@ -43,10 +43,13 @@ function DetectionView(props) {
         )}
         {state === 'stop' && (
           <>
-            <Button variant="contained" onClick={() => getVideoUrl()}>Start</Button>
+            {/*<Button variant="contained" onClick={() => getVideoUrl()}>Start</Button>
+            <br />
+            <br />*/}
+            <Button variant="contained" color="success" onClick={() => swithSourceForm()}>Select source url on video streaming</Button>
             <br />
             <br />
-            <Button variant="contained" color="success" onClick={() => swithSourceForm()}>Change source</Button>
+            <small>For example: http://127.0.0.1:5000/video-feed</small>
           </>
         )}
         {state === 'pending' && (

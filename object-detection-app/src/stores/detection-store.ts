@@ -1,5 +1,6 @@
 import { observable, makeAutoObservable, makeObservable, action } from 'mobx';
-// import { API_SOURCE, API_DETECTION } from '@env'
+
+const API_DETECTION = process.env.REACT_APP_API_DETECTION;
 
 class DetectionStore {
   data = [];
@@ -43,14 +44,12 @@ class DetectionStore {
   }
 
   getVideoUrl() {
-    // const url = `${API_DETECTION}/api`;
-    const url = `http://192.168.1.100:5000/api-video-feed`;
+    const url = `${API_DETECTION}/video-feed`;
     this.data = [];
     this.state = "pending";
     fetch(url)
       .then(response => response.json())
       .then(result => {
-        // console.log();
         this.source = result.source;
         this.data = result;
         this.state = "done";
@@ -58,12 +57,10 @@ class DetectionStore {
   }
 
   resetCamera() {
-    // const url = `${API_DETECTION}/api`;
-    const url = `http://192.168.1.100:5000/api-reset-camera`;
+    const url = `${API_DETECTION}/api-reset-camera`;
     // this.data = [];
     this.state = "pending";
     // this.state = "stop";
-    console.log('result__resetCamera___');
     fetch(url)
       .then(response => response.json())
       .then(result => {
